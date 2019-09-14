@@ -1,5 +1,6 @@
 import React from 'react';
-import DataList from './DataList'
+import Status from './Status'
+
 
 class Filters extends React.Component {
   constructor(props){
@@ -23,10 +24,12 @@ class Filters extends React.Component {
         <label className="Input__Label" htmlFor="Input"></label>
         <input 
         className="Input"
+        id="Input"
         type="text"
         onChange={this.GetInputValue}
         />
-        <DataList 
+      
+        <Status 
         filterValue={this.state.filterValue}
         data={this.props.data}
         />

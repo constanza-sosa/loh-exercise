@@ -1,7 +1,8 @@
 import React from 'react';
-import DaraCard from './DataCard'
+import DataCard from './DataCard'
 
 class DataList extends React.Component {
+  
   render() {
     return (
       <React.Fragment>
@@ -15,13 +16,15 @@ class DataList extends React.Component {
                 //email completo introducido:
                 // return item.email === this.props.filterValue;
                 // comprobar por caracteres:
-                return item.email.includes(this.props.filterValue);
+                return (
+                item.email.includes(this.props.filterValue)
+                );
               }
             })
             .map ((item, index) => {
               return(
                 <li className="User__Card" key={index}>
-                  <DaraCard 
+                  <DataCard 
                   item= {item} 
                   />
                 </li>
