@@ -9,8 +9,6 @@ class App extends React.Component {
       userData: data
     }
   }
-
-  
   render() {
     return (
       <div className="App">
@@ -32,6 +30,7 @@ class App extends React.Component {
                     )}
                   </ul>
                   <ul>
+                    {/* preguntar si asi es la mejor forma de pintar objetos dentro de objetos de arrays */}
                     <li>{item.bank.iban}</li>
                     <li>{item.bank.pin}</li>
                   </ul>
