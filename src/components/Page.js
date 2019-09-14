@@ -7,7 +7,7 @@ class Page extends React.Component {
     return (
       <main className="App__Main">
         <Filters 
-        data={this.props.data}
+        bulk={this.props.bulk}
         />
         {/* <DataList 
         data={this.props.data}

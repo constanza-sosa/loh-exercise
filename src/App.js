@@ -13,7 +13,6 @@ class App extends React.Component {
     this.state = {
       // userData: []
     }
-    this.getData = this.getData.bind(this);
   }
 
   componentDidMount() {
@@ -22,23 +21,30 @@ class App extends React.Component {
   getData() {
     fetch(endpoint)
       .then(res=>res.json())
-      .then(data => {
+      .then(results => {
         this.setState({
-          userData: data.data
+          userData: results.data,
+          hackingDate: results.date
         });
       });
     }
-
     
-  render() {
+    
+    render() {
+      if (this.state.userData === undefined) {
+        return <div />
+    }
+      console.log(this.state.userData)
+
     return (
       <div className="App">
 
         <Header />
         <Page
-          data={this.state.userData}
+          bulk={this.state.userData}
           />
-        <Footer />
+        <Footer 
+          date={this.state.hackingDate}/>
       </div>
     );
   }

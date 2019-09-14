@@ -1,5 +1,5 @@
 import React from 'react'
-// import DataList from './DataList'
+import DataList from './DataList'
 class Status extends React.Component{
   // constructor(props){
   //   super(props)
@@ -14,11 +14,11 @@ class Status extends React.Component{
     return (
       <React.Fragment>
         <div className="Status"></div>
-        {/* <DataList 
+        <DataList 
         filterValue={this.props.filterValue}
-        data={this.props.data}
+        bulk={this.props.bulk}
         // actionToPerform={this.handleChange}
-        /> */}
+        />
       </React.Fragment>
     );
   }

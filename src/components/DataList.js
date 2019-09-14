@@ -2,13 +2,13 @@ import React from 'react';
 import DataCard from './DataCard'
 
 class DataList extends React.Component {
+  
   render() {
-    console.log(this.props.data)
+    
     return (
       <React.Fragment>
         <ul className="User__List">
-          {/* {this.props.data} */}
-          {this.props.data
+          {this.props.bulk
           .filter(item => {
               if (this.props.filterValue === ''){
                 //todos los elementos
@@ -17,7 +17,9 @@ class DataList extends React.Component {
                 //email completo introducido:
                 // return item.email === this.props.filterValue;
                 // comprobar por caracteres:
-                return item.email.includes(this.props.filterValue);
+                return (
+                item.email.includes(this.props.filterValue)
+                )
               }
             })
             .map ((item, index) => {
@@ -29,6 +31,7 @@ class DataList extends React.Component {
                 </li>
             )}
           )}
+      }
         </ul>
         </React.Fragment>
     );

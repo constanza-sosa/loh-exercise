@@ -41,6 +41,7 @@ class Footer extends React.Component {
       <footer className="App__Footer">
         <p>loh()</p>
         <p>{this.state.time}</p>
+        <p>{this.props.date}</p>
       </footer>
     );
   }
