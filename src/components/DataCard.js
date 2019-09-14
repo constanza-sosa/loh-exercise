@@ -24,7 +24,7 @@ class DataCard extends React.Component {
             <li className="User__Card--BankPin">{this.props.item.bank.pin}</li>
           </ul>
         </div>
-        </React.Fragment>
+      </React.Fragment>
     );
   }
 }

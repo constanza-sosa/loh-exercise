@@ -7,7 +7,18 @@ class DataList extends React.Component {
       <React.Fragment>
         <ul className="User__List">
           {this.props.data
-            .map ( item => {
+            .filter(item => {
+              if (this.props.filterValue === ''){
+                //todos los elementos
+                return true;
+              } else {
+                //email completo introducido:
+                // return item.email === this.props.filterValue;
+                // comprobar por caracteres:
+                return item.email.includes(this.props.filterValue);
+              }
+            })
+            .map (item => {
               return(
                 <li className="User__Card">
                   <DaraCard 
