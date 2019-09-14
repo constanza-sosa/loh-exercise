@@ -17,23 +17,25 @@ class App extends React.Component {
             .map ( item => {
               return(
                 <li className="user">
-                  <h2>{item.name}</h2>
-                  <p>{item.email}</p>
-                  <ul>
-                    {item.passwords
-                    .map ( pass => {
-                      return(
-                      <li>
-                        {pass}
-                      </li>
-                      )} 
-                    )}
-                  </ul>
-                  <ul>
-                    {/* preguntar si asi es la mejor forma de pintar objetos dentro de objetos de arrays */}
-                    <li>{item.bank.iban}</li>
-                    <li>{item.bank.pin}</li>
-                  </ul>
+                  <div>
+                    <h2>{item.name}</h2>
+                    <p>{item.email}</p>
+                    <ul>
+                      {item.passwords
+                      .map ( pass => {
+                        return(
+                        <li>
+                          {pass}
+                        </li>
+                        )} 
+                      )}
+                    </ul>
+                    <ul>
+                      {/* preguntar si asi es la mejor forma de pintar objetos dentro de objetos de arrays */}
+                      <li>{item.bank.iban}</li>
+                      <li>{item.bank.pin}</li>
+                    </ul>
+                    </div>
                 </li>
             )}
           )}
