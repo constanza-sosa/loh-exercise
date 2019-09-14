@@ -1,6 +1,9 @@
 import React from 'react';
 import './App.scss';
 import data from './components/data'
+import Header from './components/Header'
+import Page from './components/Page'
+import Footer from './components/Footer'
 
 class App extends React.Component {
   constructor(props) {
@@ -12,32 +15,11 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <ul className="user__list">
-          {this.state.userData
-            .map ( item => {
-              return(
-                <li className="user">
-                  <h2>{item.name}</h2>
-                  <p>{item.email}</p>
-                  <ul>
-                    {item.passwords
-                    .map ( pass => {
-                      return(
-                      <li>
-                        {pass}
-                      </li>
-                      )} 
-                    )}
-                  </ul>
-                  <ul>
-                    {/* preguntar si asi es la mejor forma de pintar objetos dentro de objetos de arrays */}
-                    <li>{item.bank.iban}</li>
-                    <li>{item.bank.pin}</li>
-                  </ul>
-                </li>
-            )}
-          )}
-        </ul>
+        <Header />
+        <Page 
+        data={this.state.userData}
+        />
+        <Footer />
       </div>
     );
   }
