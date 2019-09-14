@@ -31,7 +31,7 @@ class Footer extends React.Component {
     minutes = (minutes < 10) ? "0" + minutes : minutes;
     seconds = (seconds < 10) ? "0" + seconds : seconds;
   
-    const actualTime = hour + ':' + minutes + ':' + seconds + '' + session;
+    const actualTime = hour + ':' + minutes + ':' + seconds + ' ' + session;
     this.setState({
       time: actualTime
     })

@@ -18,11 +18,12 @@ class DataList extends React.Component {
                 return item.email.includes(this.props.filterValue);
               }
             })
-            .map (item => {
+            .map ((item, index) => {
               return(
-                <li className="User__Card">
+                <li className="User__Card" key={index}>
                   <DaraCard 
-                  item= {item} />
+                  item= {item} 
+                  />
                 </li>
             )}
           )}

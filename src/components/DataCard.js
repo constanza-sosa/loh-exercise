@@ -10,9 +10,9 @@ class DataCard extends React.Component {
           <p className="User__Card--Email">{this.props.item.email}</p>
           <ul className="User__Card--PasswordsCont">
             {this.props.item.passwords
-            .map ( pass => {
+            .map ((pass, index) => {
               return(
-              <li className="User__Card--Passwords">
+              <li className="User__Card--Passwords" key={index}>
                 {pass}
               </li>
               )} 
