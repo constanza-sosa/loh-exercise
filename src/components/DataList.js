@@ -2,7 +2,12 @@ import React from 'react';
 import DataCard from './DataCard'
 
 class DataList extends React.Component {
-  
+  constructor(props){
+    super(props)
+    this.state = {
+      matchArray: []
+    }
+  }
   render() {
     
     return (
