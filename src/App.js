@@ -11,7 +11,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // userData: []
+      userData: [],
+      hackingDate: ''
     }
   }
 
@@ -31,8 +32,9 @@ class App extends React.Component {
     
     
     render() {
+      // Esto lo ponemos para que no se renderice hasta que el estado no se haya actualizado. 
       if (this.state.userData === undefined) {
-        return <div />
+        return <div>Espera a los resultados</div>
     }
       console.log(this.state.userData)
 
