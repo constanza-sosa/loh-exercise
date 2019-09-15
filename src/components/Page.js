@@ -1,6 +1,6 @@
 import React from 'react';
-// import DataList from './DataList';
 import Filters from './Filters';
+import PropTypes from 'prop-types';
 
 class Page extends React.Component {
   render() {
@@ -10,14 +10,16 @@ class Page extends React.Component {
         userData={this.props.userData}
         filterValue={this.props.filterValue}
         GetInputValue={this.props.GetInputValue}
-        filteredData={this.props.filteredData}
         />
-        {/* <DataList 
-        data={this.props.data}
-        /> */}
       </main>
     );
   }
 }
+
+Page.propTypes = {
+  userData: PropTypes.arrayOf(PropTypes.object).isRequired,
+  filterValue: PropTypes.string,
+  GetInputValue: PropTypes.func
+};
 
 export default Page;
