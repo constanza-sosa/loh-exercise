@@ -1,23 +1,15 @@
 import React from 'react'
 import DataList from './DataList'
 class Status extends React.Component{
-  // constructor(props){
-  //   super(props)
 
-  //   this.handleChange=this.handleChange.bind(this)
-  // }
-
-  // handleChange(){
-  //   this.forceUpdate();
-  // }
   render() {
     return (
       <React.Fragment>
-        <div className="Status"></div>
+        <div className="Status">{this.props.filteredData.length}</div>
         <DataList 
         filterValue={this.props.filterValue}
-        bulk={this.props.bulk}
-        // actionToPerform={this.handleChange}
+        userData={this.props.userData}
+        filteredData={this.props.filteredData}
         />
       </React.Fragment>
     );

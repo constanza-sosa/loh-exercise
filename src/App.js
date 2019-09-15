@@ -12,8 +12,11 @@ class App extends React.Component {
     super(props);
     this.state = {
       userData: [],
-      hackingDate: ''
+      hackingDate: '',
+      filteredData: []
+
     }
+    this.GetInputValue = this.GetInputValue.bind(this)
   }
 
   componentDidMount() {
@@ -25,11 +28,41 @@ class App extends React.Component {
       .then(results => {
         this.setState({
           userData: results.data,
-          hackingDate: results.date
+          hackingDate: results.date,
+          filterValue: '',
+          filteredData: results.data
         });
       });
     }
+
+    GetInputValue(event){
+      const value = event.currentTarget.value
+      const actData = this.state.userData
+      .filter(item => {
+        if (this.state.filterValue === ''){
+          //todos los elementos
+          return true;
+        } else {
+          //email completo introducido:
+          // return item.email === this.props.filterValue;
+          // comprobar por caracteres:
+          return (
+          item.email.includes(this.state.filterValue)
+          )
+        }
+      })
+      this.setState(prevState => { 
+        return {
+        filterValue: value,
+        filteredData: actData
+       };
+      })
+    }
     
+    
+  
+    
+
     
     render() {
       // Esto lo ponemos para que no se renderice hasta que el estado no se haya actualizado. 
@@ -43,7 +76,10 @@ class App extends React.Component {
 
         <Header />
         <Page
-          bulk={this.state.userData}
+          userData={this.state.userData}
+          filteredData={this.state.filteredData}
+          filterValue={this.state.filterValue}
+          GetInputValue={this.GetInputValue}
           />
         <Footer 
           date={this.state.hackingDate}/>

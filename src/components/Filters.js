@@ -3,21 +3,6 @@ import Status from './Status'
 
 
 class Filters extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      filterValue: ''
-    }
-    
-    this.GetInputValue = this.GetInputValue.bind(this)
-    }
-
-  GetInputValue(event){
-    const value = event.currentTarget.value
-    this.setState({
-      filterValue : value
-    })
-  }
   render() {
     return (
       <React.Fragment>
@@ -26,12 +11,13 @@ class Filters extends React.Component {
         className="Input"
         id="Input"
         type="text"
-        onChange={this.GetInputValue}
+        onChange={this.props.GetInputValue}
         />
       
         <Status 
-        filterValue={this.state.filterValue}
-        bulk={this.props.bulk}
+        filterValue={this.props.filterValue}
+        userData={this.props.userData}
+        filteredData={this.props.filteredData}
         />
       </React.Fragment>
     );
